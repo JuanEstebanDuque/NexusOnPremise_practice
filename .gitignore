@@ -10,3 +10,9 @@ dist/
 # OS / Editor
 .DS_Store
 *.log
+
+scripts/env.sh
+build-release/
+release/
+.env
+.env.registry
