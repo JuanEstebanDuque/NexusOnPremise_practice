@@ -2,8 +2,11 @@ version: '3.8'
 
 services:
   backend:
-    image: registry/product-api:1.0.0
+    build: ./backend
+    image: backend
     container_name: product-backend
+    ports:
+      - "8080:8080"
     networks:
       - product-network
     healthcheck:
@@ -14,10 +17,11 @@ services:
       start_period: 20s
 
   frontend:
+    build: ./fronted
     image: product-web
     container_name: product-frontend
     ports:
-      - "80:80"
+      - "3000:3000"
     depends_on:
       backend:
         condition: service_healthy
