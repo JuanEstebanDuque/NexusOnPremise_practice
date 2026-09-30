@@ -5,7 +5,7 @@ spring:
   application:
     name: product-api
   datasource:
-    url: jdbc:h2:mem:productdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    url: ${DB_URL:jbdc:h2:mem:productdb}    
     driverClassName: org.h2.Driver
     username: sa
     password: 
